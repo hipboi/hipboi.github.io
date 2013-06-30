@@ -1,0 +1,16 @@
+---
+layout: default
+title: 文字记录生活
+---
+
+<div id="Home">
+	<ul class="posts">
+		<h1>文字记录生活</h1>
+		{% for post in site.categories.story %}
+		<li>
+		<span>{{ post.date | date_to_string }}</span> &raquo; <h3><a class="green" href="{{ post.url }}">{{ post.title }}</a></h3>
+		<p>{{ post.excerpt }} <a class="green" href="{{ post.url }}">Read more</a></p>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
