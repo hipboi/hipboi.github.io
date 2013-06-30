@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>{{ page.title }}</title>
+		<meta name="viewport" content="width=device-width">
+		
+		<!-- syntax highlighting CSS -->
+		<link rel="stylesheet" href="/css/syntax.css">
+		
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="/css/style.css">
+		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="/js/slides.min.jquery.js"></script>
+	
+		<!--[if IE]>
+			<script type="text/javascript">
+			(function(){
+			var html5elmeents = "address|article|aside|audio|canvas|command|datalist|details|dialog|figure|figcaption|footer|header|hgroup|keygen|mark|meter|menu|nav|progress|ruby|section|time|video".split('|');
+			for(var i = 0; i < html5elmeents.length; i++){
+				document.createElement(html5elmeents[i]);
+			}
+			}
+			)();
+			</script>
+		<![endif]-->
+    </head>
+
+<body>
+	<div id="header-wrap">
+		<header class="group">
+			<h2><a href="index.html" title="严丹的个人Blog">严丹的个人Blog</a></h2>
+		
+			<nav class="group">
+				<ul>
+					<li class="home"><a href="/" title="首页">主页</a></li>
+					<li><a href="/blog" title="">文字</a></li>
+					<li><a href="/photo" title="">图片</a></li>
+					<li><a href="/about" title="">关于</a></li>
+					<li class="last">
+						<div>
+							<input type="text" name="搜索" placeholder="search" />
+							<input type="submit" name="search" value="go" class="search"/>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+	</div><!-- end header wrap -->
+	
+	
+<div id="container">
+		
+		
+		
+		{{ content }}
+		
+
+	
+	<footer class="group">
+		<div id="footer-left">
+			<p>Copyright <a class="green">@严丹 </a>
+			Powered by <a href="http://github.com" class="green">Github</a>
+			<a href="http://jekyllrb.com" class="green">Jekyll</a>
+			</p>
+		</div>
+			
+		<div id="footer-right">
+			<ul>
+				<li><a href="/">首页</a></li>
+				<li><a href="/blog">文字</a></li>
+				<li><a href="/photo">图片</a></li>
+				<li><a href="/about">关于</a></li>
+			</ul>
+		</div>
+				
+		<a href="#header-wrap"><img src="/images/back-top.png" alt="back-top" class="back-top" /></a>		
+	</footer>
+	
+	
+<script>
+$(document).ready(function() {
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return item.el.attr('title');
+			}
+		}
+	});
+});
+</script>
+
+</body>
+</html>
